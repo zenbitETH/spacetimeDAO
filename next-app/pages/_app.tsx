@@ -17,10 +17,8 @@ const { chains, provider } = configureChains(
         default: "https://api.hyperspace.node.glif.io/rpc/v0", 
       },
     },
-    
   ],
   [
-    alchemyProvider({ apiKey: "UP7-vCgH4OfFwUygRDLg8dXpADY-zb3T" }),
     publicProvider(),
   ]
 );
