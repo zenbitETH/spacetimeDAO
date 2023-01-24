@@ -33,8 +33,10 @@ module.exports = {
 					800: "#4a5b5c",
 					900: "#011B2F",
 				},
-
-			
+			},
+      fontFamily: {
+				bau: ['Baumans'],
+				exo: ['Exo'],
 			},
     },
   },
