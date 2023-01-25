@@ -5,9 +5,8 @@ import { RainbowKitProvider, getDefaultWallets } from '@rainbow-me/rainbowkit';
 import {configureChains, createClient, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
-
-
 import { Chain } from '@wagmi/core'
+import Navbar from '../components/Navbar';
  
 export const filecoin: Chain = {
   id: 3141,
@@ -34,7 +33,7 @@ export const filecoin: Chain = {
 }
 
 const { chains, provider } = configureChains(
-  [filecoin], //  <<<<<< Gnosis Chain is now the only option any other network will say "wrong network"
+  [filecoin], 
   [
     jsonRpcProvider({ rpc: () => ({ http: "https://api.hyperspace.node.glif.io/rpc/v0" }) }),  //<<<< New RPC Provider
     publicProvider(),
@@ -57,6 +56,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains}>
+        <Navbar/>
+        
         <Component {...pageProps} />
       </RainbowKitProvider>
     </WagmiConfig>
