@@ -1,34 +1,101 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.17;
 
-// Uncomment this line to use console.log
-// import "hardhat/console.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
 
-contract Lock {
-    uint public unlockTime;
-    address payable public owner;
+contract SpaceTimeDAO is AccessControl {
 
-    event Withdrawal(uint amount, uint when);
+    bytes32 internal constant MODERATOR = keccak256("MODERATOR");
+    bytes32 internal constant CATALYST = keccak256("CATALYST");
+    uint32 internal proposalId;
 
-    constructor(uint _unlockTime) payable {
-        require(
-            block.timestamp < _unlockTime,
-            "Unlock time should be in the future"
-        );
-
-        unlockTime = _unlockTime;
-        owner = payable(msg.sender);
+    struct Proposal {
+        address owner;
+        uint32 totalUpvote;
+        uint32 totalDownvote;
+        Status status;
     }
 
-    function withdraw() public {
-        // Uncomment this line, and the import of "hardhat/console.sol", to print a log in your terminal
-        // console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
-
-        require(block.timestamp >= unlockTime, "You can't withdraw yet");
-        require(msg.sender == owner, "You aren't the owner");
-
-        emit Withdrawal(address(this).balance, block.timestamp);
-
-        owner.transfer(address(this).balance);
+    enum Status {
+        Review,
+        Filtering,
+        Filtering_Vote,
+        Funding,
+        Rejected,
+        Solved
     }
+
+    mapping(uint32 => Proposal) public proposalDetail;
+    mapping(address => mapping(uint32 => bool)) proposalVoted; 
+
+    error AlreadyVoted();
+    error ProposalNotCreated();
+
+    event NewProposal(uint32 id, address owner);
+    event StateUpdateProposal(uint32 id, Status newState);
+    event TotalUpvoteUpdateProposal(uint32 id, uint32 totalUpvote);
+    event TotalDownvoteUpdateProposal(uint32 id, uint32 totalDownvote);    
+
+
+    constructor() {  
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+    }
+
+    function grantRoleModerator(address _address) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        _grantRole(MODERATOR, _address);
+    }
+
+    function grantRoleCatalyst(address _address) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        _grantRole(CATALYST, _address);
+    }
+
+    function create() external {
+
+        Proposal memory proposal;
+        proposal.owner = msg.sender;
+        proposal.status = Status.Review;
+
+        proposalDetail[proposalId] = proposal;
+
+        emit NewProposal(proposalId, msg.sender);
+
+        proposalId += 1;        
+    }
+
+    function update(uint32 _proposalId, Status _status) public onlyRole(DEFAULT_ADMIN_ROLE) {
+        proposalDetail[_proposalId].status = _status;
+
+        emit StateUpdateProposal(_proposalId, _status);
+    }
+
+    function upvote(uint32 _proposalId) public {
+
+        if (proposalVoted[msg.sender][_proposalId]) {
+            revert AlreadyVoted();
+        }
+
+        if (_proposalId >= proposalId) {
+            revert ProposalNotCreated();
+        }
+
+        proposalDetail[_proposalId].totalUpvote += 1;
+
+        emit TotalUpvoteUpdateProposal(_proposalId, proposalDetail[_proposalId].totalUpvote);
+
+        proposalVoted[msg.sender][_proposalId] = true;
+    }
+
+    function downvote(uint32 _proposalId) public {
+
+        if (proposalVoted[msg.sender][_proposalId]) {
+            revert AlreadyVoted();
+        }
+        
+        proposalDetail[_proposalId].totalDownvote += 1;
+
+        emit TotalDownvoteUpdateProposal(_proposalId, proposalDetail[_proposalId].totalDownvote);
+
+        proposalVoted[msg.sender][_proposalId] = true;
+    }
+
 }
