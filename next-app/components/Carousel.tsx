@@ -3,6 +3,8 @@ import Image from 'next/image'
 import car1 from '../assets/Carousel1.png'
 import car2 from '../assets/Carousel2.png'
 import car3 from '../assets/Carousel3.png'
+import prev from '../assets/prev.svg'
+import next from '../assets/next.svg'
 
 
 const Carousel: React.FC = () => {
@@ -23,26 +25,40 @@ const Carousel: React.FC = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden text-center">
-      <button
-        className="absolute left-0 top-0 m-4 text-white bg-gray-900 rounded-full p-2"
-        onClick={handlePrevious}
-      >
-        Previous
-      </button>
-      <button
-        className="absolute right-0 top-0 m-4 text-white bg-gray-900 rounded-full p-2"
-        onClick={handleNext}
-      >
-        Next
-      </button>
-      <Image
-        className="w-full h-64 object-cover"
-        src={images[currentIndex]}
-        width={200}
-        height={200}
-        alt="Carousel Image"
-      />
+    <div className="overflow-hidden text-center h-full grid items-center max-w-2xl mx-auto">
+      <div className='relative'>
+        <button
+          className="carButton left-0"
+          onClick={handlePrevious}
+        >
+          <Image
+          className=''
+          src={prev}
+          width={25}
+          height={25}
+          alt="Carousel Button"
+          />
+        </button>
+        <button
+          className="carButton right-0"
+          onClick={handleNext}
+        >
+          <Image
+          className=''
+          src={next}
+          width={25}
+          height={25}
+          alt="Carousel Button"
+          />
+        </button>
+        <Image
+          className="w-full z-0 h-64 object-cover "
+          src={images[currentIndex]}
+          width={400}
+          height={400}
+          alt="Carousel Image"
+        />
+      </div>
     </div>
   );
 };

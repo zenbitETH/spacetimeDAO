@@ -21,7 +21,7 @@ export default function Navbar() {
               />
             </a>
           </Link>
-          <Link href='/mintProject'>
+          <Link href='/'>
             <a className='imageBG'>
               <Image
                 src={icon2}
@@ -32,7 +32,7 @@ export default function Navbar() {
               />
             </a>
           </Link>
-          <Link href='/stakeholders'>
+          <Link href='/'>
             <a className='imageBG'>
             <Image
               src={icon3}
@@ -43,7 +43,7 @@ export default function Navbar() {
             />
             </a>
           </Link>
-          <Link href='https://ethglobal.com/showcase/eneagon-0hf0o'>
+          <Link href=''>
             <a className='imageBG'>
               <Image
                 src={icon4}
