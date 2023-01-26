@@ -9,6 +9,7 @@
   fixed top-0 w-full px-5 sm:px-24 py-3 rounded z-20 backdrop-blur-md
 }
 
+
 .wrap {
   @apply
   flex flex-wrap justify-between items-center
@@ -46,15 +47,34 @@
 .card0 {
   @apply
   xl:grid-rows-1
-  grid-cols-12
+  grid-cols-12 
 }
+
+.propDashboard {
+  @apply
+  rounded-gen col-span-10 border p-5 border-white  
+  grid grid-cols-3 gap-5 overflow-auto h-full scrollbar-hide
+}
+
+.propCard {
+  @apply 
+  rounded-gen
+  border border-white 
+  p-3 h-96
+}
+
+.daoMembers {
+  @apply
+  rounded-gen col-span-2 p-3
+}
+
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
