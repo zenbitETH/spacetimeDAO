@@ -4,6 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
+.header {
+  @apply
+  fixed top-0 w-full px-5 sm:px-24 py-5 rounded  z-20 backdrop-blur-md 
+}
+
+.wrap {
+  @apply
+  container flex flex-wrap justify-between items-center mx-auto
+}
+
+.navbar {
+  @apply
+  grid grid-cols-5
+  bg-gray-300/50 items-center border-white xl:border-r border-y xl:rounded-r-gen
+  fixed bottom-0 xl:grid-cols-1 xl:left-0 align-middle	
+  w-full xl:w-20 xl:h-[80%]   xl:grid-rows-4 grid-cols-4
+  xl:py-32
+  xl:inset-y-0 xl:my-auto 
+}
+
+.imageBG {
+  @apply
+  h-14 w-14 p-3 cursor-pointer rounded-full
+  hover:bg-gray-300/80 focus:bg-cata-100 mx-auto
+}
+
+.carButton {
+  @apply
+  absolute z-10 top-1/2 hover:bg-gray-300/50 rounded-full h-14 w-14 grid items-center text-center 
+}
 
 html,
 body {
