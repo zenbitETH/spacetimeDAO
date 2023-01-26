@@ -6,12 +6,12 @@
 
 .header {
   @apply
-  fixed top-0 w-full px-5 sm:px-24 py-5 rounded  z-20 backdrop-blur-md 
+  fixed top-0 w-full px-5 sm:px-24 py-3 rounded z-20 backdrop-blur-md
 }
 
 .wrap {
   @apply
-  container flex flex-wrap justify-between items-center mx-auto
+  flex flex-wrap justify-between items-center
 }
 
 .navbar {
@@ -19,9 +19,8 @@
   grid grid-cols-5
   bg-gray-300/50 items-center border-white xl:border-r border-y xl:rounded-r-gen
   fixed bottom-0 xl:grid-cols-1 xl:left-0 align-middle	
-  w-full xl:w-20 xl:h-[80%]   xl:grid-rows-4 grid-cols-4
-  xl:py-32
-  xl:inset-y-0 xl:my-auto 
+  w-full xl:w-20 xl:h-[80%] xl:grid-rows-4 grid-cols-4
+  xl:py-20  xl:inset-y-0 xl:my-auto 
 }
 
 .imageBG {
@@ -33,6 +32,21 @@
 .carButton {
   @apply
   absolute z-10 top-1/2 hover:bg-gray-300/50 rounded-full h-14 w-14 grid items-center text-center 
+}
+
+.card0 {
+  @apply
+  mx-5 md:mx-24 
+  bg-gray-300/20 border-white border
+  rounded-gen
+  grid grid-rows-6 
+  my-20 xl:my-0 h-[fit] xl:h-[80vh]
+}
+
+.card0 {
+  @apply
+  xl:grid-rows-1
+  grid-cols-12
 }
 
 html,
