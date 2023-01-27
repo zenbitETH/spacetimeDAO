@@ -53,15 +53,27 @@
 .propDashboard {
   @apply
   rounded-gen col-span-10 border p-5 border-white  
-  grid grid-cols-3 gap-5 overflow-auto h-full scrollbar-hide
+  grid grid-cols-3 gap-3 overflow-auto h-full scrollbar-hide
+}
+
+.propCard, .newProp {
+  @apply 
+  rounded-gen
+  border-white 
+  h-[375px]
+  font-exo
 }
 
 .propCard {
-  @apply 
-  rounded-gen
-  border border-white 
-  p-3 h-96
+  @apply
+  grid grid-rows-2 border-gray-500/50 border-2
 }
+
+.newProp {
+  @apply
+  grid items-center  text-center hover:font-bold text-white animate-pulse text-2xl cursor-pointer border-dashed border-2 hover:border-4 hover:animate-none
+}
+
 
 .daoMembers {
   @apply
