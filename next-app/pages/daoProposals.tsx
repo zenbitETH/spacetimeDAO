@@ -29,19 +29,19 @@ export default function daoProposals () {
                                 </div>
                                 <div className="text-center grid grid-cols-5 items-center gap-3 mx-auto p-3 w-full">
                                     <div className="mx-auto">
-                                        <div className="h-3 w-3 rounded-full bg-cata-500"></div>     
+                                        <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
                                     </div>
                                     <div className="mx-auto">
-                                        <div className="h-3 w-3 rounded-full bg-cata-500"></div>     
+                                        <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
                                     </div>
                                     <div className="mx-auto">
-                                        <div className="h-3 w-3 rounded-full bg-cata-500"></div>     
+                                        <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
                                     </div>
                                     <div className="mx-auto">
-                                        <div className="h-3 w-3 rounded-full bg-cata-500"></div>     
+                                        <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
                                     </div>
                                     <div className="mx-auto">
-                                        <div className="h-3 w-3 rounded-full bg-cata-500"></div>     
+                                        <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
                                     </div>
                                 </div>
                                 <div className="
@@ -67,7 +67,7 @@ export default function daoProposals () {
                         </div>
                
                     </div>
-                    <Link href='/'>
+                    <Link href='/newProposal'>
                         <div className="newProp ">+ Add new proposal</div>
                     </Link>
                 </div>
