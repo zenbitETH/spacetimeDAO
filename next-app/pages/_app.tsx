@@ -64,7 +64,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         chains={chains}>
         <Navbar/>
         <Header/>
-        
         <Component {...pageProps} />
       </RainbowKitProvider>
     </WagmiConfig>

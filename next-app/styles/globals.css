@@ -6,12 +6,13 @@
 
 .header {
   @apply
-  fixed top-0 w-full px-5 sm:px-24 py-5 rounded  z-20 backdrop-blur-md 
+  fixed top-0 w-full px-5 sm:px-24 py-3 rounded z-20 backdrop-blur-md
 }
+
 
 .wrap {
   @apply
-  container flex flex-wrap justify-between items-center mx-auto
+  flex flex-wrap justify-between items-center
 }
 
 .navbar {
@@ -19,9 +20,8 @@
   grid grid-cols-5
   bg-gray-300/50 items-center border-white xl:border-r border-y xl:rounded-r-gen
   fixed bottom-0 xl:grid-cols-1 xl:left-0 align-middle	
-  w-full xl:w-20 xl:h-[80%]   xl:grid-rows-4 grid-cols-4
-  xl:py-32
-  xl:inset-y-0 xl:my-auto 
+  w-full xl:w-20 xl:h-[80%] xl:grid-rows-4 grid-cols-4
+  xl:py-20  xl:inset-y-0 xl:my-auto 
 }
 
 .imageBG {
@@ -35,12 +35,58 @@
   absolute z-10 top-1/2 hover:bg-gray-300/50 rounded-full h-14 w-14 grid items-center text-center 
 }
 
+.card0 {
+  @apply
+  mx-5 md:mx-24 
+  bg-gray-300/20 border-white border
+  rounded-gen
+  grid grid-rows-6 
+  my-20 xl:my-0 h-[fit] xl:h-[80vh]
+}
+
+.card0 {
+  @apply
+  xl:grid-rows-1
+  grid-cols-12 
+}
+
+.propDashboard {
+  @apply
+  rounded-gen col-span-10 border p-5 border-white  
+  grid grid-cols-3 gap-3 overflow-auto h-full scrollbar-hide
+}
+
+.propCard, .newProp {
+  @apply 
+  rounded-gen
+  border-white 
+  h-[375px]
+  font-exo
+}
+
+.propCard {
+  @apply
+  grid grid-rows-2 border-gray-500/50 border-2
+}
+
+.newProp {
+  @apply
+  grid items-center  text-center hover:font-bold text-white animate-pulse text-2xl cursor-pointer border-dashed border-2 hover:border-4 hover:animate-none
+}
+
+
+.daoMembers {
+  @apply
+  rounded-gen col-span-2 p-3
+}
+
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
