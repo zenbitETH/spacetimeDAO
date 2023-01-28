@@ -44,14 +44,26 @@ export default function daoProposals () {
                                         <div className="h-3 w-3 rounded-full bg-cata-500"></div>     
                                     </div>
                                 </div>
-                                <div className="bg-mods-300/50 hover:bg-mods-300 cursor-pointer hover:text-white grid items-center text-xl px-10 rounded-tl-gen"> 
+                                <div className="
+                                    bg-mods-300/50 hover:bg-mods-300 
+                                    cursor-pointer hover:text-white 
+                                    grid items-center 
+                                    text-xl px-10 
+                                    rounded-tl-gen"
+                                > 
                                     Details
                                 </div>
                             </div>
                         </div>
                         <div className="bg-gray-200/50 rounded-b-gen p-5 relative">
-                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center italic bg-mods-900/50 text-white p-3 rounded-b-gen">City, Latitude, Longitude</div>
-                            
+                            <div className="
+                                absolute bottom-0 left-1/2 -translate-x-1/2 w-full 
+                                text-center italic text-white
+                                bg-mods-900/50  
+                                p-3 rounded-b-gen"
+                            >
+                                City, Latitude, Longitude
+                            </div>
                         </div>
                
                     </div>

@@ -10,7 +10,7 @@ export default function Navbar() {
         <nav className='-'>
           
         <div className="navbar text-center">
-        <Link href='/daoProposals'>
+        <Link href='/newProposal'>
             <a className='imageBG'>
               <Image
                 src={icon1}
@@ -21,7 +21,7 @@ export default function Navbar() {
               />
             </a>
           </Link>
-          <Link href='/'>
+          <Link href='/daoProposals'>
             <a className='imageBG'>
               <Image
                 src={icon2}
@@ -54,7 +54,6 @@ export default function Navbar() {
               />  
             </a>
           </Link>
-
         </div>
     </nav>
     )
