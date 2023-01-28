@@ -52,7 +52,7 @@
 
 .formCard {
   @apply
-  w-4/6 mx-auto
+  w-2/5 mx-auto
   
 }
 
@@ -87,7 +87,7 @@
 
 .formProgress {
   @apply
-  w-4/6 mx-auto  my-4
+  w-1/2 mx-auto  my-4
 }
 
 .progressCircles {
@@ -97,7 +97,7 @@
 
 .progressBar {
   @apply
-  w-1/6  items-center align-middle content-center flex
+  w-2/6  items-center align-middle content-center flex
 }
 
 .barContainer {
@@ -113,6 +113,11 @@
 .barPhase {
   @apply
   font-bold text-cata-100
+}
+
+.formLabel {
+  @apply
+  pb-2 font-exo font-bold text-gray-700 text-left
 }
 
 
