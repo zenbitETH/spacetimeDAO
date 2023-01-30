@@ -1,28 +1,69 @@
-pragma solidity ^0.8.0;
+pragma solidity >=0.8.0;
 
-contract StorageDeal {
+contract StorageDeals {
     struct Deal {
-        address client;
-        uint size;
-        uint duration;
-        uint price;
-        uint status;
+        address minerAddress;
+        address clientAddress;
+        uint256 startDate;
+        uint256 endDate;
+        uint256 pricePerByte;
+        uint256 dataSize;
+        uint256 status;
+        bytes32 fileHash;
     }
 
-    mapping(uint => Deal) public deals;
-    uint public dealCount;
+    mapping(bytes32 => Deal) public deals;
 
-    function createDeal(address _client, uint _size, uint _duration, uint _price) public {
-        dealCount++;
-        deals[dealCount] = Deal(_client, _size, _duration, _price, 0);
+    enum DealStatus {
+        Inactive,
+        Active,
+        Terminated
     }
 
-    function queryDeal(uint _dealId) public view returns (address, uint, uint, uint, uint) {
-        Deal memory deal = deals[_dealId];
-        return (deal.client, deal.size, deal.duration, deal.price, deal.status);
+    function createDeal(address minerAddress, address clientAddress, uint256 startDate, uint256 endDate, uint256 pricePerByte, uint256 dataSize, bytes32 fileHash) public {
+        bytes32 dealId = sha256(abi.encodePacked(minerAddress, clientAddress, startDate, endDate, pricePerByte, dataSize, fileHash));
+        deals[dealId] = Deal(minerAddress, clientAddress, startDate, endDate, pricePerByte, dataSize, uint256(DealStatus.Active), fileHash);
     }
 
-    function updateDeal(uint _dealId, uint _status) public {
-        deals[_dealId].status = _status;
+    function queryDeal(bytes32 dealId) public view returns (address, address, uint256, uint256, uint256, uint256, uint256, bytes32) {
+        Deal memory deal = deals[dealId];
+        return (deal.minerAddress, deal.clientAddress, deal.startDate, deal.endDate, deal.pricePerByte, deal.dataSize, deal.status, deal.fileHash);
     }
+
+    function updateDeal(bytes32 dealId, uint256 endDate, uint256 pricePerByte) public {
+        Deal memory deal = deals[dealId];
+        deal.endDate = endDate;
+        deal.pricePerByte = pricePerByte;
+    }
+
+    function terminateDeal(bytes32 dealId) public {
+        Deal memory deal = deals[dealId];
+        deal.status = uint256(DealStatus.Terminated);
+    }
+}
+
+contract DataDAO {
+    StorageDeals storageDeals;
+
+    constructor(address storageDealsAddress) public {
+        storageDeals = StorageDeals(storageDealsAddress);
+    }
+
+    function createStorageDeal(address minerAddress, address clientAddress, uint256 startDate, uint256 endDate, uint256 pricePerByte, uint256 dataSize, bytes32 fileHash) public {
+        storageDeals.createDeal(minerAddress, clientAddress, startDate, endDate, pricePerByte, dataSize, fileHash);
+    }
+
+    function queryStorageDeal(bytes32 dealId) public view returns (address, address, uint256, uint256, uint256, uint256, uint256, bytes32) {
+        return storageDeals.queryDeal(dealId);
+    }
+
+    function updateStorageDeal(bytes32 dealId, uint256 endDate, uint256 pricePerByte) public {
+        storageDeals.updateDeal(dealId, endDate, pricePerByte);
+    }
+
+    function terminateStorageDeal(bytes32 dealId) public {
+        storageDeals.terminateDeal(dealId);
+    }
+
+    // Add logic for incentivizing user coordination
 }
