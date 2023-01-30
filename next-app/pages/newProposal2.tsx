@@ -26,7 +26,7 @@ const Form = () => {
         {currentStep === 1 && (
           <div className='formCard'>
            <ProgressBar/>
-           <Form2/>
+           <Form1/>
           </div>
         )}
         {currentStep === 2 && (
