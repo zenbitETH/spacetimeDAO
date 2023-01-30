@@ -13,7 +13,9 @@ export default function Header() {
                 width={250}
                 alt="Spacetime DAO"/>
           </a>
-            <ConnectButton/>
+            <div className=''>
+              <ConnectButton/>
+            </div>
           </div>
         </div>
     )

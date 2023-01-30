@@ -10,25 +10,25 @@ export default function Navbar() {
         <nav className='-'>
           
         <div className="navbar text-center">
-        <Link href='/'>
+        <Link href='/newProposal'>
             <a className='imageBG'>
               <Image
                 src={icon1}
                 width={35}
                 height={35}
                 className=" cursor-pointer"
-                alt=''
+                alt='New proposal'
               />
             </a>
           </Link>
-          <Link href='/'>
+          <Link href='/daoProposals'>
             <a className='imageBG'>
               <Image
                 src={icon2}
                 width={35}
                 height={35}
                 className=" cursor-pointer"
-                alt=''
+                alt='All proposals'
               />
             </a>
           </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
               width={35}
               height={35}
               className="cursor-pointer"
-              alt=''
+              alt='Leaderboard'
             />
             </a>
           </Link>
@@ -50,11 +50,10 @@ export default function Navbar() {
                 width={35}
                 height={35}
                 className=" cursor-pointer"
-                alt=''
+                alt='Profile'
               />  
             </a>
           </Link>
-
         </div>
     </nav>
     )
