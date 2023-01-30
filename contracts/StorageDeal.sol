@@ -42,34 +42,7 @@ contract StorageDeals {
     }
 }
 
-contract DataDAO {
-    StorageDeals storageDeals;
-
-    constructor(address storageDealsAddress) public {
-        storageDeals = StorageDeals(storageDealsAddress);
-    }
-
-    function createStorageDeal(address minerAddress, address clientAddress, uint256 startDate, uint256 endDate, uint256 pricePerByte, uint256 dataSize, bytes32 fileHash) public {
-        storageDeals.createDeal(minerAddress, clientAddress, startDate, endDate, pricePerByte, dataSize, fileHash);
-    }
-
-    function queryStorageDeal(bytes32 dealId) public view returns (address, address, uint256, uint256, uint256, uint256, uint256, bytes32) {
-        return storageDeals.queryDeal(dealId);
-    }
-
-    function updateStorageDeal(bytes32 dealId, uint256 endDate, uint256 pricePerByte) public {
-        storageDeals.updateDeal(dealId, endDate, pricePerByte);
-    }
-
-    function terminateStorageDeal(bytes32 dealId) public {
-        storageDeals.terminateDeal(dealId);
-    }
-
-    // Add logic for incentivizing user coordination
-}
-
-
-pragma solidity ^0.8.0;
+ pragma solidity ^0.8.0;
 
 contract DataAccess {
     // Define the data collections that will be governed by the Data DAO
@@ -78,14 +51,19 @@ contract DataAccess {
     mapping (address => uint) shares;
     // Define the shared treasury
     address public treasury;
-    // Define the storage contract
-    address public storageContract;
 
-    constructor(address _storageContract) public {
+    // Define a mapping to store storage deals
+    mapping (uint => StorageDeal) public storageDeals;
+    // Define a struct to store information about a storage deal
+    struct StorageDeal {
+        address provider;
+        uint amount;
+        uint timeStamp;
+    }
+
+    constructor() public {
         // Set the shared treasury to the address that deploys the contract
         treasury = msg.sender;
-        // Set the storage contract
-        storageContract = _storageContract;
     }
 
     // Function to request access to a collection
@@ -98,8 +76,22 @@ contract DataAccess {
         msg.sender.transfer(collections[collectionId]);
         // Add the access fee to the shared treasury
         treasury.transfer(collections[collectionId]);
-        // Call the storage contract to manage the storage deal
-        storageContract.functions.manageStorageDeal(msg.sender, collectionId);
+    }
+
+    // Function to add a storage deal
+    function addStorageDeal(uint collectionId, address provider, uint amount) public {
+        // Only the shared treasury can add storage deals
+        require(msg.sender == treasury, "Unauthorized access");
+        // Add the storage deal to the storageDeals mapping
+        storageDeals[collectionId] = StorageDeal(provider, amount, now);
+    }
+
+    // Function to remove a storage deal
+    function removeStorageDeal(uint collectionId) public {
+        // Only the shared treasury can remove storage deals
+        require(msg.sender == treasury, "Unauthorized access");
+        // Remove the storage deal from the storageDeals mapping
+        delete storageDeals[collectionId];
     }
 
     // Function to add a collection
@@ -127,12 +119,17 @@ contract DataAccess {
     }
 
     // Function to distribute revenue
-    function distributeRevenue() public {
+     function distributeRevenue() public {
         // Only the shared treasury can distribute revenue
         require(msg.sender == treasury, "Unauthorized access");
-        // Loop through the shares mapping and distribute revenue to members
+        // Calculate the total revenue
+        uint totalRevenue = address(this).balance;
+        // Loop through all the members
         for (address member in shares) {
-            member.transfer(shares[member]);
+            // Calculate the member's share of the revenue
+            uint memberShare = totalRevenue.mul(shares[member]) / 100;
+            // Transfer the member's share of the revenue to their account
+            member.transfer(memberShare);
         }
     }
 }
