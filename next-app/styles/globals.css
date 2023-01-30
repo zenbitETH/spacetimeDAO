@@ -117,7 +117,7 @@
 
 .formLabel {
   @apply
-  pb-2 font-exo font-bold text-gray-700 text-left
+  pb-2 font-bau text-xl text-gray-700 text-left
 }
 
 .formFile {
