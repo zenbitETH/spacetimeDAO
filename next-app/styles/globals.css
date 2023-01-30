@@ -6,7 +6,7 @@
 
 .header {
   @apply
-  fixed top-0 w-full px-5 sm:px-24 py-3 rounded z-20 backdrop-blur-md
+  fixed top-0 w-full px-5 sm:px-24 py-3 rounded z-20 /*backdrop-blur-md*/
 }
 
 
@@ -118,6 +118,11 @@
 .formLabel {
   @apply
   pb-2 font-exo font-bold text-gray-700 text-left
+}
+
+.formFile {
+  @apply
+  w-full rounded-dd border-2 border-white border-dashed cursor-pointer hover:bg-gray-300/50 h-full grid items-center
 }
 
 
