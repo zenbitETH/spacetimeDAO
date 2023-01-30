@@ -67,3 +67,72 @@ contract DataDAO {
 
     // Add logic for incentivizing user coordination
 }
+
+
+pragma solidity ^0.8.0;
+
+contract DataAccess {
+    // Define the data collections that will be governed by the Data DAO
+    mapping (uint => uint) collections;
+    // Define the revenue-sharing mechanism
+    mapping (address => uint) shares;
+    // Define the shared treasury
+    address public treasury;
+    // Define the storage contract
+    address public storageContract;
+
+    constructor(address _storageContract) public {
+        // Set the shared treasury to the address that deploys the contract
+        treasury = msg.sender;
+        // Set the storage contract
+        storageContract = _storageContract;
+    }
+
+    // Function to request access to a collection
+    function requestAccess(uint collectionId) public payable {
+        // Check if the collection exists
+        require(collections[collectionId] > 0, "Collection not found");
+        // Check if the requester has the necessary funds to access the collection
+        require(msg.value >= collections[collectionId], "Insufficient funds");
+        // Deduct the access fee from the requester's account
+        msg.sender.transfer(collections[collectionId]);
+        // Add the access fee to the shared treasury
+        treasury.transfer(collections[collectionId]);
+        // Call the storage contract to manage the storage deal
+        storageContract.functions.manageStorageDeal(msg.sender, collectionId);
+    }
+
+    // Function to add a collection
+    function addCollection(uint collectionId, uint fee) public {
+        // Only the shared treasury can add collections
+        require(msg.sender == treasury, "Unauthorized access");
+        // Add the collection to the collections mapping
+        collections[collectionId] = fee;
+    }
+
+    // Function to remove a collection
+    function removeCollection(uint collectionId) public {
+        // Only the shared treasury can remove collections
+        require(msg.sender == treasury, "Unauthorized access");
+        // Remove the collection from the collections mapping
+        collections[collectionId] = 0;
+    }
+
+    // Function to update the revenue-sharing mechanism
+    function updateShares(address member, uint share) public {
+        // Only the shared treasury can update the revenue-sharing mechanism
+        require(msg.sender == treasury, "Unauthorized access");
+        // Update the shares mapping
+        shares[member] = share;
+    }
+
+    // Function to distribute revenue
+    function distributeRevenue() public {
+        // Only the shared treasury can distribute revenue
+        require(msg.sender == treasury, "Unauthorized access");
+        // Loop through the shares mapping and distribute revenue to members
+        for (address member in shares) {
+            member.transfer(shares[member]);
+        }
+    }
+}
