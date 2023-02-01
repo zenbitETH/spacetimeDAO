@@ -44,15 +44,17 @@ export default function daoProposals () {
                                         <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
                                     </div>
                                 </div>
-                                <div className="
-                                    bg-mods-300/50 hover:bg-mods-300 
-                                    cursor-pointer hover:text-white 
-                                    grid items-center 
-                                    text-xl px-10 
-                                    rounded-tl-gen"
-                                > 
-                                    Details
-                                </div>
+                                <Link href='/proposal-id'>
+                                    <div className="
+                                        bg-mods-300/50 hover:bg-mods-300 
+                                        cursor-pointer hover:text-white 
+                                        grid items-center 
+                                        text-xl px-10 
+                                        rounded-tl-gen"
+                                    > 
+                                        Details
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-gray-200/50 rounded-b-gen p-5 relative">
