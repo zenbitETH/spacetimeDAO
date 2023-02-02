@@ -5,7 +5,7 @@ export default function Form4 () {
                 <div className='formLabel'>Verify the proposal</div>
                 <div className="bg-white border-gray-400 border-2 h-full rounded-dd grid ">
                     <div className="text-left font-bau p-3">
-                        <div className="text-xl">Proposal tittle</div>
+                        <div className="text-xl">Proposal title</div>
                         <div>Type of activity</div>
                         <div className="text-justify pt-3 font-exo">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia.
@@ -23,7 +23,7 @@ export default function Form4 () {
                 <div className="grid grid-rows-2 h-full gap-3">
                     <div className="bg-white border-gray-400 border-2 h-full rounded-dd">
                         <div className="text-left font-bau p-3">
-                            <div className="text-xl">Evidence tittle</div>
+                            <div className="text-xl">Evidence title</div>
                             <div>01/01/2023</div>
                             <div className="text-justify pt-3 font-exo">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
