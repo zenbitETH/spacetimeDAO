@@ -58,6 +58,7 @@
 .detailCard {
   @apply
   grid-cols-3 gap-3 p-3
+  grid-rows-6
 }
 
 .propDashboard {
@@ -66,22 +67,35 @@
   grid grid-cols-3 gap-3 overflow-auto h-full scrollbar-hide
 }
 
-.propCard, .newProp {
+.newProp, .newEvidence {
   @apply 
-  rounded-gen
-  border-white 
-  h-[375px]
-  font-exo
+  grid items-center text-center hover:font-bold animate-pulse text-2xl cursor-pointer border-dashed border-2 hover:animate-none
+  font-exo 
+}
+
+.blockedEvidence {
+  @apply
+  grid items-center text-center font-bau animate-pulse text-2xl cursor-not-allowed	 rounded-dd bg-mods-100 text-white
+}
+
+.blockedEvidence2 {
+  @apply
+  grid items-center text-center font-bau animate-pulse text-2xl cursor-not-allowed rounded-dd bg-gray-500/50 text-white
+}
+
+.newEvidence {
+  @apply
+  border-gray-500/75 rounded-dd font-bau
 }
 
 .propCard {
   @apply
-  grid grid-rows-2 border-gray-500/50 border-2
+  grid grid-rows-2 border-gray-500/50 border-2 h-[375px] rounded-gen
 }
 
-.newProp {
-  @apply
-  grid items-center  text-center hover:font-bold text-white animate-pulse text-2xl cursor-pointer border-dashed border-2 hover:border-4 hover:animate-none
+.stateCard {
+  @apply 
+  bg-mods-100/75 rounded-gen grid items-center font-bau 
 }
 
 .daoMembers {
