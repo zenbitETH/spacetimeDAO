@@ -53,6 +53,7 @@ export default function proposalDetail() {
                 </div>
                 <div className=" bg-white/50 rounded-dd row-span-6"> 
                     <div className=" grid grid-rows-2  p-3 gap-3 h-full">
+                        <div className="blockedEvidence ">Moderators will review your proposal</div>
                        
                         {/* NEW PROPOSAL / BLOCKED EVIDENCE
                             <div className="blockedEvidence ">Moderators will review your proposal</div>
@@ -62,9 +63,9 @@ export default function proposalDetail() {
                             
                             ON REVIEW / LOCAL RESPONSE
                             <div className="blockedEvidence2 ">Once you have the local response <br/> Please upload the file</div>
-                        */}
-                        
-                        <div className="grid grid-cols-2 gap-3 items-center  bg-white rounded-dd relative">
+
+                            VOTING STATE / LOCAL EVIDENCE ONLY
+                            <div className="grid grid-cols-2 gap-3 items-center  bg-white rounded-dd relative">
                             <div className="bg-white rounded-dd ">
                                 <div className="text-left font-bau p-3">
                                     
@@ -102,27 +103,23 @@ export default function proposalDetail() {
                                 <div className="text-[12px]">made by 0x123..abc</div>
                             </div>
                         </div>
+                        */}
+                        
+                        
                         
 
                         
                     </div>
                 </div>
                 <div className="grid grid-rows-2 gap-3 row-span-6 ">
-                    
-                    <div className="stateCard row-span-2">
+                    <div className="stateCard row-span-2 ">
                         <div className="mx-auto grid gap-3">
                             <div className=" text-white text-3xl">Proposal State</div>
-                            <div className="text-7xl">Voting</div>
-                            <div className="voteCard">
-                                <div className="italic col-span-2 pb-5">
-                                    0/10 citizen moderators have voted <br/>
-                                    2/10 technical moderators have voted
-                                </div>
-                                <div className="cardBT text-5xl">👍</div>
-                                <div className="cardBT text-5xl">👎</div>
-                            </div>
+                            <div className="text-7xl">New Proposal</div>
+                            <div className="cardBT	"> ⚙️Change State</div>
                         </div>
                     </div>
+                    
                     
                  
                     {/* ON REVIEW STATE

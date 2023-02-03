@@ -80,12 +80,14 @@
 
 .blockedEvidence {
   @apply
-  grid items-center text-center font-bau animate-pulse text-2xl cursor-not-allowed	 rounded-dd bg-mods-100 text-white
+  grid items-center text-center font-bau animate-pulse text-2xl cursor-not-allowed	 rounded-dd text-white row-span-2
+  from-cata-300 to-mods-300 bg-gradient-to-r
 }
 
 .blockedEvidence2 {
   @apply
   grid items-center text-center font-bau animate-pulse text-2xl cursor-not-allowed rounded-dd bg-gray-500/50 text-white
+  
 }
 
 .newEvidence {
