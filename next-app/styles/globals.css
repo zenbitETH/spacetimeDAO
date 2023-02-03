@@ -70,7 +70,12 @@
 .newProp, .newEvidence {
   @apply 
   grid items-center text-center hover:font-bold animate-pulse text-2xl cursor-pointer border-dashed border-2 hover:animate-none
-  font-exo 
+  font-bau 
+}
+
+.formBT {
+  @apply
+  px-10 py-3 bg-mods-100 rounded-gen cursor-pointer text-white text-2xl font-bau
 }
 
 .blockedEvidence {
@@ -90,17 +95,32 @@
 
 .propCard {
   @apply
-  grid grid-rows-2 border-gray-500/50 border-2 h-[375px] rounded-gen
+  grid grid-rows-2 border-gray-500/50 border-2 h-[375px] rounded-gen font-bau
+}
+
+.stateCard, .voteCard {
+  @apply 
+  rounded-gen grid items-center font-bau 
 }
 
 .stateCard {
-  @apply 
-  bg-mods-100/75 rounded-gen grid items-center font-bau 
+  @apply
+  bg-mods-100/75
+}
+
+.voteCard {
+  @apply
+  grid grid-cols-2
 }
 
 .daoMembers {
   @apply
   rounded-gen col-span-2 p-3
+}
+
+.cardBT {
+  @apply
+  bg-white/75 text-gray-500 hover:text-gray-900 w-auto mx-auto px-3 py-2 cursor-pointer shadow-lg hover:shadow-none rounded-dd mt-8 hover:ease-in hover:bg-white 
 }
 
 .formProgress {

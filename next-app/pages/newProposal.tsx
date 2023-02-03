@@ -65,7 +65,7 @@ const Form = () => {
             </button>
           ) : (
             <button
-              className="bg-indigo-500 text-white p-2 rounded-md"
+              className="bg-indigo-500 text-white p-2 rounded-md font-bau"
               
             >
               Submit
