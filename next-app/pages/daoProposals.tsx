@@ -76,7 +76,46 @@ export default function daoProposals () {
                         <div className="newProp h-[375px] rounded-gen text-white ">+ Add a new proposal</div>
                     </Link>
                 </div>
-                <div className="daoMembers">hello3</div>
+                <div className="daoMembers">
+                    <div className="bg-white/75 items-center grid text-center rounded-dd">
+                        <div>
+                            <div className="text-6xl ">1</div> 
+                            <div className="text-xl">New</div>
+                        </div>
+                    </div>
+                    <div className="bg-white/75 items-center grid text-center rounded-dd">
+                        <div>
+                            <div className="text-6xl ">2</div> 
+                            <div className="text-xl">On review</div>
+                        </div>
+                    </div>
+                    <div className="bg-white/75 rounded-dd col-span-2 items-center text-center grid">
+                        <div>
+                            <div className="text-6xl ">0</div> 
+                            <div className="text-xl">Solved</div>
+                        </div>
+                    </div>
+                    <div className="bg-white/75 rounded-dd col-span-2 row-span-2 items-center text-center grid grid-cols-2">
+                        <div className="col-span-2">
+                            <div className="text-6xl ">0</div> 
+                            <div className="text-xl">Voting</div>
+                        </div>
+                        <div>
+                            <div className="text-6xl ">0</div> 
+                            <div className="text-xl">Funding</div>
+                        </div>
+                        <div>
+                            <div className="text-6xl ">0</div> 
+                            <div className="text-xl">Rejected</div>
+                        </div>
+                    </div>
+                    <div className="bg-white/75 rounded-dd col-span-2 row-span-2 items-center text-center grid">
+                        <div>
+                            <div className="text-6xl ">5</div> 
+                            <div className="text-xl">Total proposals</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

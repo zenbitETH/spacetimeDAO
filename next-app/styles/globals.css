@@ -115,7 +115,8 @@
 
 .daoMembers {
   @apply
-  rounded-gen col-span-2 p-3
+  rounded-gen col-span-2 p-3 grid grid-cols-2 grid-rows-6 font-exo gap-3 text-gray-700
+
 }
 
 .cardBT {
