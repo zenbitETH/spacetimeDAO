@@ -1,11 +1,8 @@
 export default function Form3 () {
     return(
         <div className='p-5 gap-5 grid grid-cols-2'>
-            <div>
-                <div className='formLabel'>Evidence Tittle</div>
-                <input type='text' placeholder='Name your proposal' className='placeholder:italic px-6 py-3 text-black w-full border-color1-500 mx-auto rounded-dd'></input>
-            </div>
-            <div>
+            
+            <div className="col-span-2">
                 <div className='formLabel'>Evidence Date</div>
 
                 <input type='date' placeholder='Name your proposal' className='placeholder:italic px-6 py-3 text-black w-full border-color1-500 mx-auto rounded-dd'></input>
@@ -16,7 +13,7 @@ export default function Form3 () {
                 <input type='text' placeholder='Name your proposal' className='placeholder:italic px-6 py-3 text-black w-full border-color1-500 mx-auto rounded-dd '></input>
             </div>
             <div className='h-72'>
-                <div className='formLabel'>Logo</div>
+                <div className='formLabel'>Upload your evidence</div>
                 <div className="flex justify-center items-center w-full h-full">
                     <label className="formFile">
                         <div className="flex flex-col justify-center items-center pt-5 pb-6">
@@ -33,7 +30,7 @@ export default function Form3 () {
             </div>
 
             <div className='col-span-2 text-center w-full my-auto pt-14 w-44 mx-auto'>
-                <div className='px-10 py-3 hover bg-mods-100 rounded-gen cursor-pointer text-white'>
+                <div className='formBT'>
                     Continue
                 </div>
             </div>
