@@ -35,12 +35,12 @@
   absolute z-10 top-1/2 hover:bg-gray-300/50 rounded-full h-14 w-14 grid items-center text-center 
 }
 
-.card0, .formCard {
+.card0, .formCard, .detailCard {
   @apply
-  mx-5 md:mx-24 
+  mx-3 md:mx-24 
   bg-gray-300/20 border-white border
   rounded-gen
-  grid grid-rows-6 
+  grid  
   h-[fit] xl:h-[80vh]
 }
 
@@ -53,7 +53,12 @@
 .formCard {
   @apply
   w-2/5 mx-auto
-  
+}
+
+.detailCard {
+  @apply
+  grid-cols-3 gap-3 p-3
+  grid-rows-6
 }
 
 .propDashboard {
@@ -62,27 +67,60 @@
   grid grid-cols-3 gap-3 overflow-auto h-full scrollbar-hide
 }
 
-.propCard, .newProp {
+.newProp, .newEvidence {
   @apply 
-  rounded-gen
-  border-white 
-  h-[375px]
-  font-exo
+  grid items-center text-center hover:font-bold animate-pulse text-2xl cursor-pointer border-dashed border-2 hover:animate-none
+  font-bau 
+}
+
+.formBT {
+  @apply
+  px-10 py-3 bg-mods-100 rounded-gen cursor-pointer text-white text-2xl font-bau
+}
+
+.blockedEvidence {
+  @apply
+  grid items-center text-center font-bau animate-pulse text-2xl cursor-not-allowed	 rounded-dd bg-mods-100 text-white
+}
+
+.blockedEvidence2 {
+  @apply
+  grid items-center text-center font-bau animate-pulse text-2xl cursor-not-allowed rounded-dd bg-gray-500/50 text-white
+}
+
+.newEvidence {
+  @apply
+  border-gray-500/75 rounded-dd font-bau
 }
 
 .propCard {
   @apply
-  grid grid-rows-2 border-gray-500/50 border-2
+  grid grid-rows-2 border-gray-500/50 border-2 h-[375px] rounded-gen font-bau
 }
 
-.newProp {
+.stateCard, .voteCard {
+  @apply 
+  rounded-gen grid items-center font-bau 
+}
+
+.stateCard {
   @apply
-  grid items-center  text-center hover:font-bold text-white animate-pulse text-2xl cursor-pointer border-dashed border-2 hover:border-4 hover:animate-none
+  bg-mods-100/75
+}
+
+.voteCard {
+  @apply
+  grid grid-cols-2
 }
 
 .daoMembers {
   @apply
   rounded-gen col-span-2 p-3
+}
+
+.cardBT {
+  @apply
+  bg-white/75 text-gray-500 hover:text-gray-900 w-auto mx-auto px-3 py-2 cursor-pointer shadow-lg hover:shadow-none rounded-dd mt-8 hover:ease-in hover:bg-white 
 }
 
 .formProgress {

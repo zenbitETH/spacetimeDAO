@@ -6,11 +6,14 @@ export default function daoProposals () {
             <div className="card0">
                 <div className="propDashboard">
                     <div className="propCard relative">
-                        <div className="bg-white rounded-t-gen grid grid-cols-6">
+                        <div className="bg-white rounded-t-gen grid grid-cols-6 relative">
+                            
                             <div className="col-span-4 p-5 my-auto">
-                                <div className="font-bold text-xl">#1 Proposal Tittle</div>
-                                <div className="font-bold">Type of activity</div>
-                                <div className="font-bold">01/01/2023</div>
+                                <div className="italic">Proposal #1</div>
+                                <div className="font-bold text-xl">Proposal Title</div>
+                                <div className="italic"> <span className="not-italic text-xl">👷</span>Type of proposal</div>
+                                <div className="text-sm">made on 01/01/2023</div>
+                                <div className="text-sm">made by 0x123...abc</div>
                             </div>
                             <div className="
                                 col-span-2                                 
@@ -32,27 +35,29 @@ export default function daoProposals () {
                                         <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
                                     </div>
                                     <div className="mx-auto">
-                                        <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
+                                        <div className="h-3 w-3 rounded-full bg-gray-300"></div>     
                                     </div>
                                     <div className="mx-auto">
-                                        <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
+                                        <div className="h-3 w-3 rounded-full bg-gray-300"></div>     
                                     </div>
                                     <div className="mx-auto">
-                                        <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
+                                        <div className="h-3 w-3 rounded-full bg-gray-300"></div>     
                                     </div>
                                     <div className="mx-auto">
-                                        <div className="h-3 w-3 rounded-full bg-gray-500"></div>     
+                                        <div className="h-3 w-3 rounded-full bg-gray-300"></div>     
                                     </div>
                                 </div>
-                                <div className="
-                                    bg-mods-300/50 hover:bg-mods-300 
-                                    cursor-pointer hover:text-white 
-                                    grid items-center 
-                                    text-xl px-10 
-                                    rounded-tl-gen"
-                                > 
-                                    Details
-                                </div>
+                                <Link href='/proposal-id'>
+                                    <div className="
+                                        bg-mods-300/50 hover:bg-mods-300 
+                                        cursor-pointer hover:text-white 
+                                        grid items-center 
+                                        text-xl px-10 
+                                        rounded-tl-gen"
+                                    > 
+                                        Details
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="bg-gray-200/50 rounded-b-gen p-5 relative">
@@ -68,7 +73,7 @@ export default function daoProposals () {
                
                     </div>
                     <Link href='/newProposal'>
-                        <div className="newProp ">+ Add new proposal</div>
+                        <div className="newProp h-[375px] rounded-gen text-white ">+ Add a new proposal</div>
                     </Link>
                 </div>
                 <div className="daoMembers">hello3</div>

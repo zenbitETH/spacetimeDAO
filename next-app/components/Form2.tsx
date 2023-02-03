@@ -17,7 +17,7 @@ export default function Form2 () {
                  
             </div>
             <div className='text-center w-full my-auto pt-14 w-44 mx-auto'>
-                <div className='px-10 py-3 hover bg-mods-100 rounded-gen cursor-pointer text-white'>
+                <div className='formBT'>
                     Continue
                 </div>
             </div>
