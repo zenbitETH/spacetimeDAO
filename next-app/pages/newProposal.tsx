@@ -25,25 +25,25 @@ const Form = () => {
       <form>
         {currentStep === 1 && (
           <div className='formCard'>
-           <ProgressBar/>
+           <ProgressBar currentStep={1}/>
            <Form1/>
           </div>
         )}
         {currentStep === 2 && (
           <div className='formCard'>
-            <ProgressBar/>
+            <ProgressBar currentStep={2}/>
             <Form2/>
          </div>
         )}
         {currentStep === 3 && (
           <div className='formCard'>
-            <ProgressBar/>
+            <ProgressBar currentStep={3}/>
             <Form3/>
          </div>
         )}
         {currentStep === 4 && (
           <div className='formCard'>
-            <ProgressBar/>
+            <ProgressBar currentStep={4}/>
             <Form4/>
           </div>
         )}
