@@ -50,6 +50,7 @@ const Form = () => {
         <div className=" mt-8">
           {currentStep !== 1 && (
             <button
+              type='button'
               className="bg-gray-300 text-gray-700 p-2 rounded-md"
               onClick={prevStep}
             >
@@ -58,6 +59,7 @@ const Form = () => {
           )}
           {currentStep !== 4 ? (
             <button
+              type='button'
               className="bg-indigo-500 text-white p-2 rounded-md"
               onClick={nextStep}
             >
@@ -65,6 +67,7 @@ const Form = () => {
             </button>
           ) : (
             <button
+              type='button'
               className="bg-indigo-500 text-white p-2 rounded-md font-bau"
               
             >
