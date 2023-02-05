@@ -1,6 +1,6 @@
 import Map from "./Map";
 interface Evidence {
-    date: Date;
+    date: string;
     description: string;
     evidenceForm: string
   }
@@ -24,10 +24,10 @@ export default function Form4 (props: Form4Props) {
             <div className="h-full">
                 <div className="bg-white h-full rounded-dd grid ">
                     <div className="text-left font-bau p-3">
-                        <div className="text-xl">{proposal ? proposal.name : "Proposal title"}</div>
-                        <div className="italic">{proposal ? proposal.type : "Proposal type"}</div>
+                        <div className="text-xl">{proposal?.name || "Proposal title"}</div>
+                        <div className="italic">{proposal?.type || "Proposal type"}</div>
                         <div className="text-justify pt-3 font-exo">
-                        {proposal ? proposal.description : "Proposal type"} 
+                        {proposal?.description || "Proposal type"} 
                         </div>
                     </div>
                     
@@ -49,9 +49,9 @@ export default function Form4 (props: Form4Props) {
                 <div className="grid grid-rows-2 h-full gap-3">
                     <div className="bg-white border-gray-400 border-2 h-full rounded-dd">
                         <div className="text-left font-bau p-3">
-                            <div>01/01/2023</div>
+                            <div>{proposal?.evidence?.date || "Evidence date"}</div>
                             <div className="text-justify pt-3 font-exo">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                                {proposal?.evidence?.description || "Evidence description"}
                             </div>
                         </div>
                     </div>
