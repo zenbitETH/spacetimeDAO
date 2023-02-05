@@ -46,36 +46,36 @@ const Form = () => {
   return (
     <div className="from-cata-300 to-mods-300 bg-gradient-to-br 
     h-screen grid items-center text-center mx-auto">
-      <form>
+      <form className='formCard'>
         {currentStep === 1 && (
-          <div className='formCard'>
+          <div className=''>
            <ProgressBar currentStep={1}/>
            <Form1 proposal={proposal} setProposal={setProposal} nextStep={nextStep} />
           </div>
         )}
         {currentStep === 2 && (
-          <div className='formCard'>
+          <div className=''>
             <ProgressBar currentStep={2}/>
             <Form2 nextStep={nextStep}/>
          </div>
         )}
         {currentStep === 3 && (
-          <div className='formCard'>
+          <div className=''>
             <ProgressBar currentStep={3}/>
             <Form3 proposal={proposal} setProposal={setProposal} nextStep={nextStep} />
          </div>
         )}
         {currentStep === 4 && (
-          <div className='formCard'>
+          <div className=''>
             <ProgressBar currentStep={4}/>
             <Form4 proposal={proposal}/>
           </div>
         )}
-        <div className=" mt-8">
+        <div className=" flex justify-between m-auto gap-5">
           {currentStep !== 1 && (
             <button
               type='button'
-              className="bg-gray-300 text-gray-700 p-2 rounded-md"
+              className="formBT"
               onClick={prevStep}
             >
               Previous
@@ -84,7 +84,7 @@ const Form = () => {
           {currentStep !== 4 ? (
             <button
               type='button'
-              className="bg-indigo-500 text-white p-2 rounded-md"
+              className="formBT"
               onClick={nextStep}
             >
               Next
@@ -92,7 +92,7 @@ const Form = () => {
           ) : (
             <button
               type='button'
-              className="bg-indigo-500 text-white p-2 rounded-md font-bau"
+              className="formBT"
               
             >
               Submit
