@@ -1,3 +1,4 @@
+import Map from "./Map";
 interface Evidence {
     date: Date;
     description: string;
@@ -30,12 +31,12 @@ export default function Form4 (props: Form4Props) {
                         </div>
                     </div>
                     
-                    <div className="bg-gray-500/50 rounded-b-dd h-full relative">
-                        <div className="h-36">Map</div>
+                    <div className="h-full relative">
+                        <Map/>
                         <div className="
                             absolute bottom-0 left-1/2 -translate-x-1/2 w-full 
                             text-center italic text-white
-                            bg-mods-900/50  
+                            bg-gray-800/75  
                             p-3 rounded-b-dd"
                         >
                             City, Latitude, Longitude
@@ -57,11 +58,6 @@ export default function Form4 (props: Form4Props) {
                     <div className="h-full bg-gray-300/60 rounded-dd grid items-center text-white text-sm">Your evidence will be previewed here</div>
                 </div>                    
             </div>
-            <div className='col-span-2 text-center w-full my-auto pt-14 w-44 mx-auto'>
-                <div className='formBT'>
-                Submit
-            </div>
         </div>
-    </div>
     )
 }

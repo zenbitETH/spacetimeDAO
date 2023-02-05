@@ -57,12 +57,6 @@ export default function Form3 (props: any) {
                 <div className='formLabel'>Evidence preview</div>
                 <div className="h-full bg-gray-300/60 rounded-dd grid items-center text-white text-sm">Your evidence will be previewed here</div>
             </div>
-
-            <div className='col-span-2 text-center w-full my-auto pt-14 w-44 mx-auto'>
-                <div className='formBT' onClick={updateProposal}>
-                    Continue
-                </div>
-            </div>
-    </div>
+        </div>
     )
 }

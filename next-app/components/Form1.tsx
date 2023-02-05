@@ -52,11 +52,6 @@ export default function Form1 (props: any) {
                 <div className='formLabel'>Description</div>
                 <textarea placeholder='Describe your proposal' className='p-5 text-black w-full mx-auto rounded-dd placeholder:italic h-full border-color1-500' onChange={handleDescriptionChange}></textarea>
             </div>
-            <div className='text-center w-full my-auto pt-14 w-44 mx-auto'>
-                <button className='formBT' type="button" onClick={updateProposal}>
-                    Continue
-                </button>
-            </div>
         </div>
     )
 }

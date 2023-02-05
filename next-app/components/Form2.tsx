@@ -83,11 +83,6 @@ export default function Form2 (props: any) {
                 </div>   
                  
             </div>
-            <div className='text-center w-full my-auto pt-14 w-44 mx-auto'>
-                <div className='formBT' onClick={nextStep}>
-                    Continue
-                </div>
-            </div>
             <PlacesAutocomplete
                 onAddressSelect={(address) => {
                 getGeocode({ address: address }).then((results) => {
