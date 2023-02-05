@@ -20,17 +20,7 @@ export default function proposalDetail() {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia. Lorem ipsum dolor sit amet, consectetur adipiscing.consectetur adipiscing.consec
                         </div>
                     </div>
-                    <div className="bg-gray-500/50 h-full relative">
-                        <Map/>
-                        <div className="
-                            absolute bottom-0 left-1/2 -translate-x-1/2 w-full 
-                            text-center italic text-white 
-                            bg-mods-900/75
-                            p-3"
-                        >
-                            City, Latitude, Longitude
-                        </div>
-                    </div>
+                    
                     
                     <div className="grid grid-cols-2 gap-3 mx-8 items-center  bg-white rounded-dd relative">
                         <div className="bg-white rounded-dd h-full ">
@@ -46,6 +36,18 @@ export default function proposalDetail() {
                         </div>
                         <div className="absolute top-0 right-0 p-2 bg-gray-500 rounded-bl-dd rounded-tr-dd text-white text-sm italic">Initial Evidence
                         <div className="text-[12px] text-center">01/01/2017</div></div>
+                    </div>
+
+                    <div className="h-full relative">
+                        <Map/>
+                        <div className="
+                            absolute bottom-0 left-1/2 -translate-x-1/2 w-full 
+                            text-center italic text-white 
+                            bg-mods-900/75
+                            p-3 rounded-b-dd"
+                        >
+                            City, Latitude, Longitude
+                        </div>
                     </div>
                   
                     

@@ -7,6 +7,8 @@ const containerStyle = {
     height: '100%',
     position: 'absolute',
     overflow: 'hidden',
+    borderBottomLeftRadius: '22px',
+    borderBottomRightRadius: '22px',
 };
 
 const Map: NextPage = () => {
