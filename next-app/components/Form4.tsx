@@ -1,13 +1,32 @@
-export default function Form4 () {
+interface Evidence {
+    date: Date;
+    description: string;
+    evidenceForm: string
+  }
+  
+  interface Proposal {
+    name: string;
+    type: string;
+    description: string;
+    location: string;
+    evidence: Evidence
+  }
+
+interface Form4Props {
+    proposal: Proposal;
+  }
+
+export default function Form4 (props: Form4Props) {
+    const {proposal} = props;
     return(
         <div className='p-5 gap-3 grid grid-cols-2 '>
             <div className="h-full">
                 <div className="bg-white h-full rounded-dd grid ">
                     <div className="text-left font-bau p-3">
-                        <div className="text-xl">Proposal title</div>
-                        <div className="italic"><span className="not-italic text-xl">👷</span> Type of proposal</div>
+                        <div className="text-xl">{proposal ? proposal.name : "Proposal title"}</div>
+                        <div className="italic">{proposal ? proposal.type : "Proposal type"}</div>
                         <div className="text-justify pt-3 font-exo">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia.
+                        {proposal ? proposal.description : "Proposal type"} 
                         </div>
                     </div>
                     

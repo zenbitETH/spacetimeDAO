@@ -1,4 +1,5 @@
-export default function Form2 () {
+export default function Form2 (props: any) {
+    const {nextStep} = props;
     return(
         <div className='p-5 gap-5 grid'>
             <div>
@@ -17,7 +18,7 @@ export default function Form2 () {
                  
             </div>
             <div className='text-center w-full my-auto pt-14 w-44 mx-auto'>
-                <div className='formBT'>
+                <div className='formBT' onClick={nextStep}>
                     Continue
                 </div>
             </div>
