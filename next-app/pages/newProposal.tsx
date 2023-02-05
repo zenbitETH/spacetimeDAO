@@ -6,8 +6,34 @@ import Form4 from "../components/Form4"
 
 import ProgressBar from '../components/ProgressBar';
 
+interface Evidence {
+  date: Date;
+  description: string;
+  evidenceForm: string
+}
+
+interface Proposal {
+  name: string;
+  type: string;
+  description: string;
+  location: string;
+  evidence: Evidence
+}
+
 const Form = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [evidence, setEvidence] = useState<Evidence>({
+    date: new Date(),
+    description: "",
+    evidenceForm: "",
+  })
+  const [proposal, setProposal] = useState<Proposal>({
+    name: "",
+    type: "",
+    description: "",
+    location: "",
+    evidence: evidence,
+  });
 
   const nextStep = () => {
     setCurrentStep(currentStep + 1);
@@ -17,8 +43,6 @@ const Form = () => {
     setCurrentStep(currentStep - 1);
   };
 
-
-
   return (
     <div className="from-cata-300 to-mods-300 bg-gradient-to-br 
     h-screen grid items-center text-center mx-auto">
@@ -26,25 +50,25 @@ const Form = () => {
         {currentStep === 1 && (
           <div className='formCard'>
            <ProgressBar currentStep={1}/>
-           <Form1/>
+           <Form1 proposal={proposal} setProposal={setProposal} nextStep={nextStep} />
           </div>
         )}
         {currentStep === 2 && (
           <div className='formCard'>
             <ProgressBar currentStep={2}/>
-            <Form2/>
+            <Form2 nextStep={nextStep}/>
          </div>
         )}
         {currentStep === 3 && (
           <div className='formCard'>
             <ProgressBar currentStep={3}/>
-            <Form3/>
+            <Form3 proposal={proposal} setProposal={setProposal} nextStep={nextStep} />
          </div>
         )}
         {currentStep === 4 && (
           <div className='formCard'>
             <ProgressBar currentStep={4}/>
-            <Form4/>
+            <Form4 proposal={proposal}/>
           </div>
         )}
         <div className=" mt-8">
