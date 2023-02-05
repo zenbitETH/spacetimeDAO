@@ -1,32 +1,22 @@
 import * as React from "react";
 
 export default function Form3 (props: any) {
-    const {proposal, setProposal, nextStep} = props;
-    const [date, setDate] = React.useState<string>("");
-    const [description, setDescription] = React.useState<string>("") 
-    const [evidenceForm, setEvidenceForm] = React.useState<string>("")   
+    const {proposal, setProposal} = props;
     
     const handleDateChange = (event: any) => {
-        setDate((new Date(event.target.value)).toISOString().split("T")[0]);
-      };
+        const updatedProposal = {...proposal, evidence: {...proposal.evidence, date: event.target.value as string}};
+        setProposal(updatedProposal);
+    };
 
     const handleDescriptionChange = (event: any) => {
-        setDescription(event.target.value as string);
+        const updatedProposal = {...proposal, evidence: {...proposal.evidence, description: event.target.value as string}};
+        setProposal(updatedProposal);
       };
+      
     const handleEvidenceForm = (event: any) => {
-        setEvidenceForm(event.target.value as string);
+        const updatedProposal = {...proposal, evidence: {...proposal.evidence, evidenceForm: event.target.value as string}};
+        setProposal(updatedProposal);
       };
-
-    const updateProposal = () => {
-        proposal.evidence.date = date;
-        proposal.evidence.description = description;
-        proposal.evidence.evidenceForm = evidenceForm;
-        setProposal(proposal);
-
-        nextStep();
-
-        console.log(proposal)
-    }
 
     return(
         <div className='p-5 gap-5 grid grid-cols-2'>
