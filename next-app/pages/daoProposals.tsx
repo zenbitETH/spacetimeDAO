@@ -1,3 +1,4 @@
+import Map from "../components/Map"
 import Link from "next/link"
 
 export default function daoProposals () {
@@ -60,12 +61,13 @@ export default function daoProposals () {
                                 </Link>
                             </div>
                         </div>
-                        <div className="bg-gray-200/50 rounded-b-gen p-5 relative">
+                        <div className="bg-gray-200/50 rounded-b-gen relative">
+                            <Map/>
                             <div className="
                                 absolute bottom-0 left-1/2 -translate-x-1/2 w-full 
                                 text-center italic text-white
-                                bg-mods-900/50  
-                                p-3 rounded-b-gen"
+                                bg-mods-900/75
+                                p-3 rounded-b-dd"
                             >
                                 City, Latitude, Longitude
                             </div>
