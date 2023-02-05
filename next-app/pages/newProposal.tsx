@@ -7,7 +7,7 @@ import Form4 from "../components/Form4"
 import ProgressBar from '../components/ProgressBar';
 
 interface Evidence {
-  date: Date;
+  date: string;
   description: string;
   evidenceForm: string
 }
@@ -23,7 +23,7 @@ interface Proposal {
 const Form = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [evidence, setEvidence] = useState<Evidence>({
-    date: new Date(),
+    date: "",
     description: "",
     evidenceForm: "",
   })

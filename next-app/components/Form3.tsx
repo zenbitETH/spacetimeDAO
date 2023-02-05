@@ -2,12 +2,12 @@ import * as React from "react";
 
 export default function Form3 (props: any) {
     const {proposal, setProposal, nextStep} = props;
-    const [date, setDate] = React.useState<Date>(new Date());
+    const [date, setDate] = React.useState<string>("");
     const [description, setDescription] = React.useState<string>("") 
     const [evidenceForm, setEvidenceForm] = React.useState<string>("")   
     
     const handleDateChange = (event: any) => {
-        setDate(new Date(event.target.value));
+        setDate((new Date(event.target.value)).toISOString().split("T")[0]);
       };
 
     const handleDescriptionChange = (event: any) => {

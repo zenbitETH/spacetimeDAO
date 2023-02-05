@@ -8,7 +8,6 @@ export default function Form1 (props: any) {
 
     const handleNameChange = (event: any) => {
         setName(event.target.value as string);
-        console.log(name)
       };
     const handleTypeChange = (event: any) => {
         setType(event.target.value as string);
@@ -38,7 +37,7 @@ export default function Form1 (props: any) {
             </div>
             <div>
                 <div className='formLabel'>Type of proposal</div>
-                <select className='pl-5 text-black w-full rounded-dd px-6 py-3 border-color1-500' onChange={handleTypeChange}>
+                <select className='pl-5 text-black w-full rounded-dd px-6 py-3 border-color1-500' defaultValue="" onChange={handleTypeChange}>
                     <option className='formLabel' value="" selected>Please select</option>
                     <option>🗳️ Improvement in public administration</option>
                     <option>🌳 Face-to-face event</option>
