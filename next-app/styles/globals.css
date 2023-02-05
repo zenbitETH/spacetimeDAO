@@ -80,12 +80,14 @@
 
 .blockedEvidence {
   @apply
-  grid items-center text-center font-bau animate-pulse text-2xl cursor-not-allowed	 rounded-dd bg-mods-100 text-white
+  grid items-center text-center font-bau animate-pulse text-3xl cursor-not-allowed	 rounded-dd text-white row-span-2
+  from-cata-300 to-mods-300 bg-gradient-to-r
 }
 
 .blockedEvidence2 {
   @apply
   grid items-center text-center font-bau animate-pulse text-2xl cursor-not-allowed rounded-dd bg-gray-500/50 text-white
+  
 }
 
 .newEvidence {
@@ -121,7 +123,7 @@
 
 .cardBT {
   @apply
-  bg-white/75 text-gray-500 hover:text-gray-900 w-auto mx-auto px-3 py-2 cursor-pointer shadow-lg hover:shadow-none rounded-dd mt-8 hover:ease-in hover:bg-white 
+  bg-white/75 text-gray-500 hover:text-gray-900 w-auto mx-auto px-3 py-2 cursor-pointer shadow-lg hover:shadow-none rounded-dd mt-8 hover:ease-in hover:bg-white text-lg
 }
 
 .formProgress {
@@ -180,4 +182,16 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+.MapPlaceHolder {
+  height: auto !important;
+  width: auto !important;
+}
+
+.GMAPS {
+  border-radius: 100px;
+  overflow: hidden;
+  
 }
