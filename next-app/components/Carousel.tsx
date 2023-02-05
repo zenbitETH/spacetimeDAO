@@ -3,8 +3,12 @@ import Image from 'next/image'
 import car1 from '../assets/Carousel1.png'
 import car2 from '../assets/Carousel2.png'
 import car3 from '../assets/Carousel3.png'
+import car4 from '../assets/Carousel4.png'
+import car5 from '../assets/Carousel5.png'
+import car6 from '../assets/Carousel6.png'
 import prev from '../assets/prev.svg'
 import next from '../assets/next.svg'
+import foot from '../assets/footer.png'
 
 
 const Carousel: React.FC = () => {
@@ -21,11 +25,14 @@ const Carousel: React.FC = () => {
   const images = [
     car1,
     car2,
-    car3
+    car3,
+    car4,
+    car5,
+    car6
   ];
 
   return (
-    <div className="overflow-hidden text-center h-full grid items-center max-w-2xl mx-auto">
+    <div className="overflow-hidden text-center h-full grid items-center mx-36">
       <div className='relative'>
         <button
           className="carButton left-0"
@@ -54,10 +61,19 @@ const Carousel: React.FC = () => {
         <Image
           className="w-full z-0 h-64 object-cover "
           src={images[currentIndex]}
-          width={400}
-          height={400}
+          width={1920}
+          height={1080}
           alt="Carousel Image"
         />
+      </div>
+      <div className='fixed bottom-5 mx-96 '>
+        <Image
+          src={foot}
+          width={1693}
+          height={101}
+          alt="Carousel Image"
+        />
+        
       </div>
     </div>
   );
