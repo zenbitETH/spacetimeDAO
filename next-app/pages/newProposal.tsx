@@ -3,8 +3,8 @@ import Form1 from "../components/Form1";
 import Form2 from "../components/Form2";
 import Form3 from "../components/Form3";
 import Form4 from "../components/Form4"
-
 import ProgressBar from '../components/ProgressBar';
+import { uploadIpfs } from '../utils/ipfs';
 
 interface Evidence {
   date: string;
@@ -42,6 +42,19 @@ const Form = () => {
   const prevStep = () => {
     setCurrentStep(currentStep - 1);
   };
+
+  const uploadMetadata = async () => {
+    try {
+      const { path } = await uploadIpfs({
+        proposal
+      })
+      return path;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
 
   return (
     <div className="from-cata-300 to-mods-300 bg-gradient-to-br 
@@ -93,7 +106,7 @@ const Form = () => {
             <button
               type='button'
               className="formBT"
-              
+              onClick={() => uploadMetadata()}              
             >
               Submit
             </button>
