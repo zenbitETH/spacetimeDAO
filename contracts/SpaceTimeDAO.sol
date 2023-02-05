@@ -14,6 +14,7 @@ contract SpaceTimeDAO is AccessControl {
         uint32 totalUpvote;
         uint32 totalDownvote;
         Status status;
+        string cid;
     }
 
     enum Status {
@@ -33,6 +34,7 @@ contract SpaceTimeDAO is AccessControl {
 
     event NewProposal(uint32 id, address owner);
     event StateUpdateProposal(uint32 id, Status newState);
+    event CidUpdateProposal(uint32 id, string cid);    
     event TotalUpvoteUpdateProposal(uint32 id, uint32 totalUpvote);
     event TotalDownvoteUpdateProposal(uint32 id, uint32 totalDownvote);    
 
@@ -67,6 +69,12 @@ contract SpaceTimeDAO is AccessControl {
 
         emit StateUpdateProposal(_proposalId, _status);
     }
+
+    function updateCID(uint32 _proposalId, string calldata _cid) public onlyRole(DEFAULT_ADMIN_ROLE) {
+        proposalDetail[_proposalId].cid = _cid;
+
+        emit CidUpdateProposal(_proposalId, _cid);
+    }    
 
     function upvote(uint32 _proposalId) public {
 

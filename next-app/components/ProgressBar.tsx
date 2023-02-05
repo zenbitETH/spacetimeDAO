@@ -1,4 +1,5 @@
-export default function ProgressBar () {
+export default function ProgressBar (props: any) {
+    const {currentStep} = props;
     return(              
         <div>
             <div className="formProgress">
@@ -36,19 +37,20 @@ export default function ProgressBar () {
                 grid mx-auto w-2/3 px-6 grid-cols-4 
                 text-center text-sm"
             >
-                <div className="font-bold underline underline-offset-4">
+
+                <div className={currentStep === 1 ? "font-bold underline underline-offset-4" : ""}>
                     General
                 </div>
 
-                <div className="">
+                <div className={currentStep === 2 ? "font-bold underline underline-offset-4" : ""}>
                     Location
                 </div>
 
-                <div className="">
+                <div className={currentStep === 3 ? "font-bold underline underline-offset-4" : ""}>
                     Evidence
                 </div>
 
-                <div className="">
+                <div className={currentStep === 4 ? "font-bold underline underline-offset-4" : ""}>
                     Confirm
                 </div>
             </div>
