@@ -183,3 +183,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.MapPlaceHolder {
+  height: auto !important;
+  width: auto !important;
+}
+
+.GMAPS {
+  border-radius: 100px;
+  overflow: hidden;
+  
+}

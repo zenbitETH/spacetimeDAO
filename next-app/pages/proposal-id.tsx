@@ -1,3 +1,5 @@
+import Map from "../components/Map"
+
 export default function proposalDetail() {
     return (
         <div className="from-cata-300 to-mods-300 bg-gradient-to-br 
@@ -18,36 +20,35 @@ export default function proposalDetail() {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia. Lorem ipsum dolor sit amet, consectetur adipiscing.consectetur adipiscing.consec
                         </div>
                     </div>
-                
-                    
-                        <div className="grid grid-cols-2 gap-3 mx-8 items-center  bg-white rounded-dd relative">
-                            <div className="bg-white rounded-dd h-full ">
-                                <div className="text-left font-bau p-3">
-                                    
-
-                                    <div className="text-justify text-sm pt-3 font-exo">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="h-full bg-gray-300/60 rounded-dd grid items-center text-sm">
-                                Your evidence will be previewed here
-                            </div>
-                            <div className="absolute top-0 right-0 p-2 bg-gray-500 rounded-bl-dd rounded-tr-dd text-white text-sm italic">Initial Evidence
-                            <div className="text-[12px] text-center">01/01/2017</div></div>
-                        </div>
-                  
-                    <div className="bg-gray-500/50 rounded-b-dd p-5 h-full relative">
-                        Map
+                    <div className="bg-gray-500/50 h-full relative">
+                        <Map/>
                         <div className="
                             absolute bottom-0 left-1/2 -translate-x-1/2 w-full 
                             text-center italic text-white 
-                            bg-mods-900/50  
-                            p-3 rounded-b-dd"
+                            bg-mods-900/75
+                            p-3"
                         >
                             City, Latitude, Longitude
                         </div>
                     </div>
+                    
+                    <div className="grid grid-cols-2 gap-3 mx-8 items-center  bg-white rounded-dd relative">
+                        <div className="bg-white rounded-dd h-full ">
+                            <div className="text-left font-bau p-3">
+                                
+                                <div className="text-justify text-sm pt-3 font-exo">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                                </div>
+                            </div>
+                        </div>
+                        <div className="h-full bg-gray-300/60 rounded-dd grid items-center text-sm">
+                            Your evidence will be previewed here
+                        </div>
+                        <div className="absolute top-0 right-0 p-2 bg-gray-500 rounded-bl-dd rounded-tr-dd text-white text-sm italic">Initial Evidence
+                        <div className="text-[12px] text-center">01/01/2017</div></div>
+                    </div>
+                  
+                    
                     
                     
                 </div>
