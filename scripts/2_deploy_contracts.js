@@ -1,5 +1,14 @@
-const StorageDeal = artifacts.require("StorageDeal");
+const hre = require("hardhat");
 
-module.exports = async function(deployer) {
-  await deployer.deploy(StorageDeal);
-};
+async function main() {
+
+const SpaceTimeDAO = await hre.ethers.getContractFactory("SpaceTimeDAO");
+const spaceTimeDAO = await SpaceTimeDAO.deploy();
+
+await spaceTimeDAO.deployed();
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
