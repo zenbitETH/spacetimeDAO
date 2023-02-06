@@ -18,7 +18,7 @@ export default function proposalDetail() {
                     <div className="text-left font-bau row-span-2 px-8 pt-10">
                         
                         <div className="text-2xl font-bold justify">Clean the park</div>
-                        <div className="italic"> <span className="not-italic text-xl">👷</span>Request work or          maintenance</div>
+                        <div className="italic"> <span className="not-italic text-xl">👷</span>Request work or maintenance</div>
                         <div className="text-justify pt-3 font-exo text-lg">
                             The park needs maintanance and cleaning 
                         </div>
@@ -52,7 +52,6 @@ export default function proposalDetail() {
                         <div className="
                             absolute bottom-0 left-1/2 -translate-x-1/2 w-full 
                             text-center italic text-white 
-                            bg-mods-900/75
                             p-3 rounded-b-dd"
                         >
                              Queretaro, Mexico, 20.587834, -100.389245

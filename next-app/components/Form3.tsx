@@ -31,7 +31,7 @@ export default function Form3 (props: any) {
                 <div className='formLabel'>Short description</div>
                 <input type='text' placeholder='Name your proposal' className='placeholder:italic px-6 py-3 text-black w-full border-color1-500 mx-auto rounded-dd' onChange={handleDescriptionChange}></input>
             </div>
-            <div className='h-72'>
+            <div className='h-72 col-span-2'>
                 <div className='formLabel'>Upload your evidence</div>
                 <div className="flex justify-center items-center w-full h-full">
                     <label className="formFile">
@@ -43,10 +43,7 @@ export default function Form3 (props: any) {
                     </label>
                 </div>
             </div>
-            <div className="">
-                <div className='formLabel'>Evidence preview</div>
-                <div className="h-full bg-gray-300/60 rounded-dd grid items-center text-white text-sm">Your evidence will be previewed here</div>
-            </div>
+
         </div>
     )
 }

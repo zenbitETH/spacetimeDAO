@@ -152,9 +152,9 @@ const Form = () => {
 
         {isSuccess && (
         <div className=" flex justify-between m-auto gap-5">
-          Successfully created your proposal! 
+          Your proposal was created succesfully! 
           <div>
-            <a href={`https://hyperspace.filfox.info/en/message/${data?.hash}`} > FilFox </a>
+            <a href={`https://hyperspace.filfox.info/en/message/${data?.hash}`} > View CID on explorer </a>
           </div>
         </div>
         )}

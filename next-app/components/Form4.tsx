@@ -1,4 +1,8 @@
 import Map from "./Map";
+import Image from "next/image"
+import file from "../assets/file2.jpg"
+
+
 interface Evidence {
     date: string;
     description: string;
@@ -27,7 +31,7 @@ export default function Form4 (props: Form4Props) {
                         <div className="text-xl">{proposal?.name || "Proposal title"}</div>
                         <div className="italic">{proposal?.type || "Proposal type"}</div>
                         <div className="text-justify pt-3 font-exo">
-                        {proposal?.description || "Proposal type"} 
+                            {proposal?.description || "Proposal type"} 
                         </div>
                     </div>
                     
@@ -39,7 +43,7 @@ export default function Form4 (props: Form4Props) {
                             bg-gray-800/75  
                             p-3 rounded-b-dd"
                         >
-                            City, Latitude, Longitude
+                            Queretaro, Mexico, 20.587834, -100.389245
                         </div>
                         
                     </div>
@@ -55,7 +59,15 @@ export default function Form4 (props: Form4Props) {
                             </div>
                         </div>
                     </div>
-                    <div className="h-full bg-gray-300/60 rounded-dd grid items-center text-white text-sm">Your evidence will be previewed here</div>
+                    <div className="h-full bg-gray-300/60 rounded-dd grid items-center text-white text-sm">
+                        <Image
+                                src={file}
+                                width={1920}
+                                height={1080}
+                                alt="Carousel Button"
+                                className="rounded-dd"
+                            />
+                    </div>
                 </div>                    
             </div>
         </div>

@@ -66,7 +66,7 @@ export default function Form2 (props: any) {
     const {nextStep} = props;
     
     return(
-        <div className='p-5 gap-5 grid'>
+        <div className='p-5 gap-5 grid font-exo'>
             <div>
                 <div className='formLabel'>Proposal location</div>
                 <div className="h-96 bg-gray-300 rounded-dd  relative grid text-center pt-5 border-gray-500 border border-t-0">
@@ -75,15 +75,15 @@ export default function Form2 (props: any) {
                     <input type='text' placeholder='Type the adress to locate the proposal' className='placeholder:italic px-6 py-3 text-black w-full border-gray-500 mx-auto rounded-dd absolute top-0 left-0'>
                     </input>
                     
-                    <div className="grid grid-cols-3 py-3 bg-gray-800/75 rounded-dd absolute -bottom-5 left-0 w-full text-white border border-gray-500">
-                        <div>City</div> 
-                        <div>Lat</div>
-                        <div>Lon</div>
+                    <div className="grid italic font-exo grid-cols-3 py-3 bg-gray-800/75 rounded-dd absolute -bottom-5 left-0 w-full text-white border border-gray-500">
+                        <div>Queretaro, Mexico</div> 
+                        <div>20.587834</div>
+                        <div>-100.389245</div>
                     </div>    
                 </div>   
                  
             </div>
-            <PlacesAutocomplete
+            {/*<PlacesAutocomplete
                 onAddressSelect={(address) => {
                 getGeocode({ address: address }).then((results) => {
                   const { lat, lng } = getLatLng(results[0]);
@@ -93,6 +93,7 @@ export default function Form2 (props: any) {
                 });
               }}
             />
+            */}
         </div>
     )
 }

@@ -35,7 +35,7 @@ export default function ProgressBar (props: any) {
             </div>
             <div className="
                 grid mx-auto w-2/3 px-6 grid-cols-4 
-                text-center text-sm"
+                text-center  text-white font-exo"
             >
 
                 <div className={currentStep === 1 ? "font-bold underline underline-offset-4" : ""}>

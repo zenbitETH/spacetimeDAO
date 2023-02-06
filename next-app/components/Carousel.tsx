@@ -69,7 +69,7 @@ const Carousel: React.FC = () => {
       <div className='fixed bottom-5 max-w-2xl fixed left-1/2 -translate-x-1/2'>
         <Image
           src={foot}
-          width={1500}
+          width={800}
           height={101}
           alt="Carousel Image"
         />
