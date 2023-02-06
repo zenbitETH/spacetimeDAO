@@ -197,5 +197,4 @@ contract SpaceTimeDAO is AccessControl {
         Deal memory deal = deals[dealId];
         deal.status = uint256(DealStatus.Terminated);
     }
-
 }
