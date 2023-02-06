@@ -36,7 +36,7 @@ export const filecoin: Chain = {
 const { chains, provider } = configureChains(
   [filecoin], 
   [
-    jsonRpcProvider({ rpc: () => ({ http: "https://api.hyperspace.node.glif.io/rpc/v0" }) }),  //<<<< New RPC Provider
+    jsonRpcProvider({ rpc: () => ({ http: "https://api.hyperspace.node.glif.io/rpc/v1" }) }),  //<<<< New RPC Provider
     publicProvider(),
     // No need to alchemy
   ]

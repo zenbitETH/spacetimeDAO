@@ -81,6 +81,10 @@ const Form = () => {
   }
 
   React.useEffect(() => {
+    if (data) console.log(data);
+  }, [data]);
+
+  React.useEffect(() => {
     console.log(path);
     console.log(triggerTx);
     if (triggerTx) {
@@ -148,7 +152,10 @@ const Form = () => {
 
         {isSuccess && (
         <div className=" flex justify-between m-auto gap-5">
-          Successfully creted your proposal! 
+          Successfully created your proposal! 
+          <div>
+            <a href={`https://hyperspace.filfox.info/en/message/${data?.hash}`} > FilFox </a>
+          </div>
         </div>
         )}
       </form>
