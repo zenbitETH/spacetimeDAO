@@ -16,11 +16,16 @@ contract SpaceTimeDAO is AccessControl {
         uint256 pricePerByte;
         uint256 dataSize;
         uint256 status;
-        bytes32 fileHash;
+        bytes32 contentCID;
     }
 
     mapping(bytes32 => Deal) public deals;
-
+    mapping(bytes => bool) public cidSet;
+    mapping(bytes => uint) public cidSizes;
+    mapping(bytes => mapping(uint64 => bool)) public cidProviders;
+    mapping(uint32 => Proposal) public proposalDetail;
+    mapping(address => mapping(uint32 => bool)) proposalVoted; 
+    
     enum DealStatus {
         Inactive,
         Active,
@@ -43,9 +48,6 @@ contract SpaceTimeDAO is AccessControl {
         Rejected,
         Solved
     }
-
-    mapping(uint32 => Proposal) public proposalDetail;
-    mapping(address => mapping(uint32 => bool)) proposalVoted; 
 
     error AlreadyVoted();
     error ProposalNotCreated();
@@ -131,7 +133,7 @@ contract SpaceTimeDAO is AccessControl {
         uint256 endDate,
         uint256 pricePerByte,
         uint256 dataSize,
-        bytes32 fileHash
+        bytes32 contentCID
     ) public {
         bytes32 dealId = sha256(
             abi.encodePacked(
@@ -141,7 +143,7 @@ contract SpaceTimeDAO is AccessControl {
                 endDate,
                 pricePerByte,
                 dataSize,
-                fileHash
+                contentCID
             )
         );
         deals[dealId] = Deal(
@@ -152,7 +154,7 @@ contract SpaceTimeDAO is AccessControl {
             pricePerByte,
             dataSize,
             uint256(DealStatus.Active),
-            fileHash
+            contentCID
         );
     }
 
@@ -179,8 +181,13 @@ contract SpaceTimeDAO is AccessControl {
             deal.pricePerByte,
             deal.dataSize,
             deal.status,
-            deal.fileHash
+            deal.contentCID
         );
+    }
+
+    function addCID(bytes calldata cidraw, uint size) public onlyRole(DEFAULT_ADMIN_ROLE) {
+       cidSet[cidraw] = true;
+       cidSizes[cidraw] = size;
     }
 
     function updateDeal(
