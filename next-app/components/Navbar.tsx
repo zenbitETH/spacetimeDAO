@@ -14,8 +14,8 @@ export default function Navbar() {
             <a className='imageBG'>
               <Image
                 src={icon1}
-                width={35}
-                height={35}
+                width={45}
+                height={45}
                 className=" cursor-pointer"
                 alt='New proposal'
               />
@@ -25,30 +25,19 @@ export default function Navbar() {
             <a className='imageBG'>
               <Image
                 src={icon2}
-                width={35}
-                height={35}
+                width={45}
+                height={45}
                 className=" cursor-pointer"
                 alt='All proposals'
               />
             </a>
           </Link>
-          <Link href='/'>
-            <a className='imageBG'>
-            <Image
-              src={icon3}
-              width={35}
-              height={35}
-              className="cursor-pointer"
-              alt='Leaderboard'
-            />
-            </a>
-          </Link>
           <Link href=''>
             <a className='imageBG'>
               <Image
-                src={icon4}
-                width={35}
-                height={35}
+                src={icon3}
+                width={45}
+                height={45}
                 className=" cursor-pointer"
                 alt='Profile'
               />  
