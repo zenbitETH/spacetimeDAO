@@ -66,10 +66,10 @@ const Carousel: React.FC = () => {
           alt="Carousel Image"
         />
       </div>
-      <div className='fixed bottom-5 mx-96 '>
+      <div className='fixed bottom-5 max-w-2xl fixed left-1/2 -translate-x-1/2'>
         <Image
           src={foot}
-          width={1693}
+          width={1500}
           height={101}
           alt="Carousel Image"
         />
