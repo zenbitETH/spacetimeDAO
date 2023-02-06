@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { usePrepareContractWrite, useContractWrite, useWaitForTransaction } from 'wagmi'
 
 import Form1 from "../components/Form1";
@@ -154,7 +155,7 @@ const Form = () => {
         <div className=" flex justify-between m-auto gap-5">
           Your proposal was created succesfully! 
           <div>
-            <a href={`https://hyperspace.filfox.info/en/message/${data?.hash}`} > View CID on explorer </a>
+            <Link href={`https://hyperspace.filfox.info/en/message/${data?.hash}`} > View CID on explorer </Link>
           </div>
         </div>
         )}
