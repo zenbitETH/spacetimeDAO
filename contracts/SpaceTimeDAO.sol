@@ -8,24 +8,6 @@ contract SpaceTimeDAO is AccessControl {
     bytes32 internal constant MODERATOR = keccak256("MODERATOR");
     bytes32 internal constant CATALYST = keccak256("CATALYST");
     uint32 internal proposalId;
-    struct Deal {
-        address minerAddress;
-        address clientAddress;
-        uint256 startDate;
-        uint256 endDate;
-        uint256 pricePerByte;
-        uint256 dataSize;
-        uint256 status;
-        bytes32 fileHash;
-    }
-
-    mapping(bytes32 => Deal) public deals;
-
-    enum DealStatus {
-        Inactive,
-        Active,
-        Terminated
-    }
 
     struct Proposal {
         address owner;
@@ -122,80 +104,6 @@ contract SpaceTimeDAO is AccessControl {
         emit TotalDownvoteUpdateProposal(_proposalId, proposalDetail[_proposalId].totalDownvote);
 
         proposalVoted[msg.sender][_proposalId] = true;
-    }
-
-    function createDeal(
-        address minerAddress,
-        address clientAddress,
-        uint256 startDate,
-        uint256 endDate,
-        uint256 pricePerByte,
-        uint256 dataSize,
-        bytes32 fileHash
-    ) public {
-        bytes32 dealId = sha256(
-            abi.encodePacked(
-                minerAddress,
-                clientAddress,
-                startDate,
-                endDate,
-                pricePerByte,
-                dataSize,
-                fileHash
-            )
-        );
-        deals[dealId] = Deal(
-            minerAddress,
-            clientAddress,
-            startDate,
-            endDate,
-            pricePerByte,
-            dataSize,
-            uint256(DealStatus.Active),
-            fileHash
-        );
-    }
-
-    function queryDeal(bytes32 dealId)
-        public
-        view
-        returns (
-            address,
-            address,
-            uint256,
-            uint256,
-            uint256,
-            uint256,
-            uint256,
-            bytes32
-        )
-    {
-        Deal memory deal = deals[dealId];
-        return (
-            deal.minerAddress,
-            deal.clientAddress,
-            deal.startDate,
-            deal.endDate,
-            deal.pricePerByte,
-            deal.dataSize,
-            deal.status,
-            deal.fileHash
-        );
-    }
-
-    function updateDeal(
-        bytes32 dealId,
-        uint256 endDate,
-        uint256 pricePerByte
-    ) public {
-        Deal memory deal = deals[dealId];
-        deal.endDate = endDate;
-        deal.pricePerByte = pricePerByte;
-    }
-
-    function terminateDeal(bytes32 dealId) public {
-        Deal memory deal = deals[dealId];
-        deal.status = uint256(DealStatus.Terminated);
     }
 
 }
