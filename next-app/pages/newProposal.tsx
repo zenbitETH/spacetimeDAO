@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePrepareContractWrite, useContractWrite } from 'wagmi'
+import { usePrepareContractWrite, useContractWrite, useWaitForTransaction } from 'wagmi'
 
 import Form1 from "../components/Form1";
 import Form2 from "../components/Form2";
@@ -28,6 +28,7 @@ const Form = () => {
   const [currentStep, setCurrentStep] = React.useState(1);
   const [ipfsLoading, setIpfsLoading] = React.useState<boolean>(false);
   const [path, setPath] = React.useState<string>("");
+  const [triggerTx, setTriggerTx] = React.useState<boolean>(false);
   const [evidence, setEvidence] = React.useState<Evidence>({
     date: "",
     description: "",
@@ -42,12 +43,16 @@ const Form = () => {
   });
 
   const { config } = usePrepareContractWrite({
-    address: '0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2',
+    address: '0x74A91C3BAaFCb2eB22Da68A369Ad4048d84C5f0C',
     abi: SpaceTimeDAO_ABI,
     functionName: 'create',
     args: [path]
   })
-  const { write } = useContractWrite(config)
+  const { write, data } = useContractWrite(config)
+
+  const { isLoading, isSuccess } = useWaitForTransaction({
+    hash: data?.hash,
+  })
 
   const nextStep = () => {
     setCurrentStep(currentStep + 1);
@@ -64,7 +69,10 @@ const Form = () => {
         proposal
       })
       setIpfsLoading(false)
-
+      if (path) {
+        setPath(path);
+        setTriggerTx(true);
+      }
       return path;
     } catch (error) {
       setIpfsLoading(false)
@@ -72,7 +80,14 @@ const Form = () => {
     }
   }
 
-
+  React.useEffect(() => {
+    console.log(path);
+    console.log(triggerTx);
+    if (triggerTx) {
+      write?.();
+    }
+    setTriggerTx(false)
+  }, [triggerTx])
 
   return (
     <div className="from-cata-300 to-mods-300 bg-gradient-to-br 
@@ -126,11 +141,16 @@ const Form = () => {
               className="formBT"
               onClick={() => uploadMetadata()}              
             >
-              {ipfsLoading ? "Uploading to IPFS..." : "Submit"}
+              {ipfsLoading ? "Uploading to IPFS..." : isLoading ? "Uploading transaction..." : "Submit"}
             </button>
           )}
         </div>
 
+        {isSuccess && (
+        <div className=" flex justify-between m-auto gap-5">
+          Successfully creted your proposal! 
+        </div>
+        )}
       </form>
     </div>
   );
