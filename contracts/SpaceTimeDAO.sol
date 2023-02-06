@@ -52,7 +52,7 @@ contract SpaceTimeDAO is AccessControl {
     error AlreadyVoted();
     error ProposalNotCreated();
 
-    event NewProposal(uint32 id, address owner);
+    event NewProposal(uint32 id, address owner, string cid);
     event StateUpdateProposal(uint32 id, Status newState);
     event CidUpdateProposal(uint32 id, string cid);    
     event TotalUpvoteUpdateProposal(uint32 id, uint32 totalUpvote);
@@ -71,15 +71,16 @@ contract SpaceTimeDAO is AccessControl {
         _grantRole(CATALYST, _address);
     }
 
-    function create() external {
+    function create(string calldata _cid) external {
 
         Proposal memory proposal;
         proposal.owner = msg.sender;
         proposal.status = Status.Review;
+        proposal.cid = _cid;
 
         proposalDetail[proposalId] = proposal;
 
-        emit NewProposal(proposalId, msg.sender);
+        emit NewProposal(proposalId, msg.sender, _cid);
 
         proposalId += 1;        
     }

@@ -1,31 +1,20 @@
 import * as React from "react";
 
 export default function Form1 (props: any) {
-    const {proposal, setProposal, nextStep} = props;
-    const [name, setName] = React.useState<string>("")
-    const [type, setType] = React.useState<string>("") 
-    const [description, setDescription] = React.useState<string>("")           
+    const {proposal, setProposal} = props;        
 
     const handleNameChange = (event: any) => {
-        setName(event.target.value as string);
+        const updatedProposal = {...proposal, name: event.target.value as string};
+        setProposal(updatedProposal);
       };
     const handleTypeChange = (event: any) => {
-        setType(event.target.value as string);
+        const updatedProposal = {...proposal, type: event.target.value as string};
+        setProposal(updatedProposal);
       };
     const handleDescriptionChange = (event: any) => {
-        setDescription(event.target.value as string);
+        const updatedProposal = {...proposal, description: event.target.value as string};
+        setProposal(updatedProposal);
       };
-
-    const updateProposal = () => {
-        proposal.name = name;
-        proposal.type = type;
-        proposal.description = description
-        setProposal(proposal);
-
-        nextStep();
-
-        console.log(proposal)
-    }
 
     return(
         <div className='p-5 gap-5 grid'>
