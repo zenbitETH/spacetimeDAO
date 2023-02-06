@@ -89,9 +89,10 @@ const Form = () => {
     console.log(path);
     console.log(triggerTx);
     if (triggerTx) {
-      write?.();
+      write?.(); 
     }
     setTriggerTx(false)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [triggerTx])
 
   return (
