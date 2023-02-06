@@ -16,10 +16,10 @@ export const filecoin: Chain = {
   nativeCurrency: {
     decimals: 18,
     name: 'Filecon',
-    symbol: 'FIL',
+    symbol: 'tFIL',
   },
   rpcUrls: {
-    default: { http: ['https://api.hyperspace.node.glif.io/rpc/v0'] },
+    default: { http: ['https://api.hyperspace.node.glif.io/rpc/v1'] },
   },
   blockExplorers: {
     etherscan: { name: 'Filfox', url: 'https://hyperspace.filfox.info/en' },
