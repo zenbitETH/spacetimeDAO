@@ -2,12 +2,16 @@
 pragma solidity 0.8.17;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
+import { MarketAPI } from "@zondax/filecoin-solidity/contracts/v0.8/mocks/MarketAPI.sol";
+import { CommonTypes } from "@zondax/filecoin-solidity/contracts/v0.8/types/CommonTypes.sol";
+import { MarketTypes } from "@zondax/filecoin-solidity/contracts/v0.8/types/MarketAPI.sol";
 
 contract SpaceTimeDAO is AccessControl {
 
     bytes32 internal constant MODERATOR = keccak256("MODERATOR");
     bytes32 internal constant CATALYST = keccak256("CATALYST");
     uint32 internal proposalId;
+    MarketAPI marketApiInstance = MarketAPI(marketApiAddress);
     struct Deal {
         address minerAddress;
         address clientAddress;
