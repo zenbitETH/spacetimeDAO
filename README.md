@@ -2,7 +2,13 @@
 
 Data DAO to incentivize citizen coordination with storage deals 
 
-Developed at [Filecoin Space Warp](https://ethglobal.com/showcase/spacetimedao-ukw1r)  
+Developed at [Filecoin Space Warp](https://ethglobal.com/showcase/spacetimedao-ukw1r) 
+
+## Contracts
+
+[SpacetimeDAO actor on FVM mainnet](https://filfox.info/en/address/0x5b182Ff846583D9DD5FAC1340C39Be3C84c981de
+)  
+
 
 ## About
 SpacetimeDAO is a decentralized platform for data management and governance proposals for public spaces. It uses a combination of smart contracts deployed on the Filecoin hyperspace network and a UI built with Next.js.
@@ -19,11 +25,6 @@ SpacetimeDAO is a decentralized application built on the Filecoin Virtual Machin
 
 The user interface of SpacetimeDAO is built using Next.js, a JavaScript framework for building server-rendered React applications. It uses Tailwind CSS, a utility-first CSS framework, for styling and layout. The application also utilizes GPS coordinates to track the location of public places and to ensure that the digital content is properly associated with the correct location.
 
-
-## Contracts
-
-[SpacetimeDAO actor on FVM mainnet](https://filfox.info/en/address/0x5b182Ff846583D9DD5FAC1340C39Be3C84c981de
-)  
 
 ### Built with:
 
