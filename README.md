@@ -22,7 +22,7 @@ The user interface of SpacetimeDAO is built using Next.js, a JavaScript framewor
 
 ## Contracts
 
-[SpacetimeDAO actor on Hyperspace testnet](https://hyperspace.filfox.info/en/tx/0xd9fb48c809f81b9a0b45e4d915b50d94aa01e9302d1b1b7d513df1fe065fb127
+[SpacetimeDAO actor on FVM mainnet](https://filfox.info/en/address/0x5b182Ff846583D9DD5FAC1340C39Be3C84c981de
 )  
 
 ### Built with:
