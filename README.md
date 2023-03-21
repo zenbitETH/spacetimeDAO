@@ -4,8 +4,6 @@ Data DAO to incentivize citizen coordination with storage deals
 
 Developed at [Filecoin Space Warp](https://ethglobal.com/showcase/spacetimedao-ukw1r) 
 
-## Contracts
-
 [SpacetimeDAO actor on FVM mainnet](https://filfox.info/en/address/0x5b182Ff846583D9DD5FAC1340C39Be3C84c981de
 )  
 
